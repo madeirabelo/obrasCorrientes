@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { AlertCircle, CheckCircle } from "lucide-react"
+// import Image from 'next/image' // Remove this line if not used
 
 interface StatusData {
   id: number
@@ -45,7 +46,8 @@ const initialData: StatusData[] = [
 
 export function DashboardComponent() {
   const [statusData] = useState<StatusData[]>(initialData)
-  //const [setStatusData] = useState<StatusData[]>(initialData)
+  // const [setStatusData] = useState<StatusData[]>(initialData) // Remove this line
+
   const [expandedId, setExpandedId] = useState<number | null>(null)
 
   const handleCardClick = (id: number) => {
