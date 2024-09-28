@@ -44,7 +44,8 @@ const initialData: StatusData[] = [
 ]
 
 export function DashboardComponent() {
-  const [statusData, setStatusData] = useState<StatusData[]>(initialData)
+  const [statusData] = useState<StatusData[]>(initialData)
+  //const [setStatusData] = useState<StatusData[]>(initialData)
   const [expandedId, setExpandedId] = useState<number | null>(null)
 
   const handleCardClick = (id: number) => {
