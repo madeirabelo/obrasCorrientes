@@ -8,19 +8,26 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"// {{ edit_1 }}
 
 export function Obra3Details() {
-  const [formData, setFormData] = useState({
-    presupuesto: "3.000.000 ARS",
-    inicioObra: "2024-01-01",
-    finObra: "2024-12-31",
-    descripcion: "Reconstrucción del sistema de alcantarillado de la calle Catamarca"
+  const [formData, setFormData] = useState(() => {
+    // Load data from localStorage if available
+    const savedData = localStorage.getItem('obra3FormData')
+    return savedData ? JSON.parse(savedData) : {
+      presupuesto: "3.000.000 ARS",
+      inicioObra: "2024-01-01",
+      finObra: "2024-12-31",
+      descripcion: "Reconstrucción del sistema de alcantarillado de la calle Catamarca"
+    }
   })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prevData => ({
-      ...prevData,
+    const updatedData = {
+      ...formData,
       [name]: value
-    }))
+    }
+    setFormData(updatedData)
+    // Save updated data to localStorage
+    localStorage.setItem('obra3FormData', JSON.stringify(updatedData))
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -31,7 +38,7 @@ export function Obra3Details() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Obra 3 Details</CardTitle>
+        <CardTitle>Obra 3 - detalles</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -74,7 +81,7 @@ export function Obra3Details() {
               className="h-24"
             />
           </div>
-          <Button type="submit">Save Changes</Button>
+          {/* <Button type="submit">Save Changes</Button> */}
         </form>
       </CardContent>
     </Card>
