@@ -5,16 +5,16 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
-export function Obra2Details() {
+export function Obra1Details() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Obra 2 Details</CardTitle>
+        <CardTitle>Obra 1 Details</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="presupuesto">Presupuesto</Label>
-          <Input id="presupuesto" value="2.000.000 ARS" readOnly />
+          <Input id="presupuesto" value="4.000.000 ARS" readOnly />
         </div>
         <div className="space-y-2">
           <Label htmlFor="inicio-obra">Inicio Obra</Label>
@@ -37,3 +37,7 @@ export function Obra2Details() {
     </Card>
   )
 }
+
+export const Obra4Details = () => {
+    return <div>Obra 4 Details</div>; // Placeholder component
+};

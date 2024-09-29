@@ -14,7 +14,7 @@ export function Obra3Details() {
       <CardContent className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="presupuesto">Presupuesto</Label>
-          <Input id="presupuesto" value="1.000.000 ARS" readOnly />
+          <Input id="presupuesto" value="3.000.000 ARS" readOnly />
         </div>
         <div className="space-y-2">
           <Label htmlFor="inicio-obra">Inicio Obra</Label>
